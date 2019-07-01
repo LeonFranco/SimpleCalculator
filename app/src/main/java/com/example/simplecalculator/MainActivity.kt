@@ -30,4 +30,16 @@ class MainActivity : AppCompatActivity() {
         modePressed = false
     } // pressNumButton
 
+    private fun pressedModeButton(modeSymbol: Char) {
+        mode = when (modeSymbol) {
+            '+' -> CalcMode.ADD
+            '-' -> CalcMode.SUBTRACT
+            '*' -> CalcMode.MULTIPLY
+            else -> throw IllegalArgumentException()
+        }
+
+        output.append(modeSymbol)
+        modePressed = true
+    } // pressedModeButton
+
 } // MainActivity

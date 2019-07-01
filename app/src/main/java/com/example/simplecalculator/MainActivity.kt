@@ -4,10 +4,19 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
 class MainActivity : AppCompatActivity() {
-    // ATTRIBUTES //
-
-
     // HELPER CLASS //
+    private enum class CalcMode {
+        ADD,
+        SUBTRACT,
+        MULTIPLY,
+        NONE
+    } // calcMode
+
+
+    // ATTRIBUTES //
+    private var mode = CalcMode.NONE
+    private var modePressed = false
+    private val output = StringBuilder()
 
 
     // METHODS //

@@ -25,4 +25,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     } // onCreate
 
+    private fun pressNumButton(num: Int) {
+        output.append(num)
+        modePressed = false
+    } // pressNumButton
+
 } // MainActivity

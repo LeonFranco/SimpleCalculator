@@ -42,4 +42,12 @@ class MainActivity : AppCompatActivity() {
         modePressed = true
     } // pressedModeButton
 
+    private fun pressedClear() {
+
+    } // pressedClear
+
+    private fun pressedEnter() {
+
+    } // pressedClear
+
 } // MainActivity

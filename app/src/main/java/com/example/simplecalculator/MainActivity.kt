@@ -48,7 +48,8 @@ class MainActivity : AppCompatActivity() {
     } // pressedModeButton
 
     private fun pressedClear() {
-
+        output.clear()
+        modePressed = false
     } // pressedClear
 
     private fun pressedEnter() {

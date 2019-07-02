@@ -38,8 +38,13 @@ class MainActivity : AppCompatActivity() {
             else -> throw IllegalArgumentException()
         }
 
-        output.append(modeSymbol)
-        modePressed = true
+        if (modePressed) {
+            output[output.lastIndex] = modeSymbol
+        }
+        else {
+            output.append(modeSymbol)
+            modePressed = true
+        }
     } // pressedModeButton
 
     private fun pressedClear() {

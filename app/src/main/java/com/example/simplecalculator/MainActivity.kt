@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        mainTextView.text = "100"
+        mainTextView.text = "HELLO"
     } // onCreate
 
     private fun pressNumButton(num: Int) {

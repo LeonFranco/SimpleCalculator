@@ -23,10 +23,94 @@
             app:columnCount="4" app:rowCount="4">
 
         <Button
+                android:text="7"
+                android:layout_width="0dp"
+                android:layout_height="0dp" android:id="@+id/button7" app:layout_columnWeight="0.25"
+                app:layout_rowWeight="0.25" android:background="@color/colorPrimary" android:textSize="50sp"
+                android:textColor="#FFFFFF"/>
+        <Button
+                android:text="8"
+                android:layout_width="0dp"
+                android:layout_height="0dp" android:id="@+id/button8" app:layout_columnWeight="0.25"
+                app:layout_rowWeight="0.25" android:background="@color/colorPrimary" android:textSize="50sp"
+                android:textColor="#FFFFFF"/>
+        <Button
+                android:text="9"
+                android:layout_width="0dp"
+                android:layout_height="0dp" android:id="@+id/button9" app:layout_columnWeight="0.25"
+                app:layout_rowWeight="0.25" android:background="@color/colorPrimary" android:textSize="50sp"
+                android:textColor="#FFFFFF"/>
+        <Button
+                android:text="+"
+                android:layout_width="0dp"
+                android:layout_height="0dp" android:id="@+id/buttonPlus" app:layout_columnWeight="0.25"
+                app:layout_rowWeight="0.25" android:background="@color/colorAccent" android:textSize="50sp"
+                android:textColor="#FFFFFF"/>
+        <Button
+                android:text="4"
+                android:layout_width="0dp"
+                android:layout_height="0dp" android:id="@+id/button4" app:layout_columnWeight="0.25"
+                app:layout_rowWeight="0.25" android:background="@color/colorPrimary" android:textSize="50sp"
+                android:textColor="#FFFFFF"/>
+        <Button
+                android:text="5"
+                android:layout_width="0dp"
+                android:layout_height="0dp" android:id="@+id/button5" app:layout_columnWeight="0.25"
+                app:layout_rowWeight="0.25" android:background="@color/colorPrimary" android:textSize="50sp"
+                android:textColor="#FFFFFF"/>
+        <Button
+                android:text="6"
+                android:layout_width="0dp"
+                android:layout_height="0dp" android:id="@+id/button6" app:layout_columnWeight="0.25"
+                app:layout_rowWeight="0.25" android:background="@color/colorPrimary" android:textSize="50sp"
+                android:textColor="#FFFFFF"/>
+        <Button
+                android:text="-"
+                android:layout_width="0dp"
+                android:layout_height="0dp" android:id="@+id/buttonMinus" app:layout_columnWeight="0.25"
+                app:layout_rowWeight="0.25" android:background="@color/colorAccent" android:textSize="50sp"
+                android:textColor="#FFFFFF"/>
+        <Button
+                android:text="1"
+                android:layout_width="0dp"
+                android:layout_height="0dp" android:id="@+id/button1" app:layout_columnWeight="0.25"
+                app:layout_rowWeight="0.25" android:background="@color/colorPrimary" android:textSize="50sp"
+                android:textColor="#FFFFFF"/>
+        <Button
+                android:text="2"
+                android:layout_width="0dp"
+                android:layout_height="0dp" android:id="@+id/button2" app:layout_columnWeight="0.25"
+                app:layout_rowWeight="0.25" android:background="@color/colorPrimary" android:textSize="50sp"
+                android:textColor="#FFFFFF"/>
+        <Button
+                android:text="3"
+                android:layout_width="0dp"
+                android:layout_height="0dp" android:id="@+id/button3" app:layout_columnWeight="0.25"
+                app:layout_rowWeight="0.25" android:background="@color/colorPrimary" android:textSize="50sp"
+                android:textColor="#FFFFFF"/>
+        <Button
+                android:text="*"
+                android:layout_width="0dp"
+                android:layout_height="0dp" android:id="@+id/buttonMultiply" app:layout_columnWeight="0.25"
+                app:layout_rowWeight="0.25" android:background="@color/colorAccent" android:textSize="50sp"
+                android:textColor="#FFFFFF"/>
+        <Button
                 android:text="0"
                 android:layout_width="0dp"
-                android:layout_height="0dp" android:id="@+id/button" app:layout_columnWeight="0.25"
-                app:layout_rowWeight="0.25" android:background="@color/colorPrimaryDark" android:textSize="50sp"
+                android:layout_height="0dp" android:id="@+id/button0" app:layout_columnWeight="0.25"
+                app:layout_rowWeight="0.25" android:background="@color/colorPrimary" android:textSize="50sp"
+                android:textColor="#FFFFFF" app:layout_columnSpan="2"/>
+        <Button
+                android:text="C"
+                android:layout_width="0dp"
+                android:layout_height="0dp" android:id="@+id/buttonClear" app:layout_columnWeight="0.25"
+                app:layout_rowWeight="0.25" android:background="@color/colorPrimary" android:textSize="50sp"
+                android:textColor="#FFFFFF"/>
+        <Button
+                android:text="="
+                android:layout_width="0dp"
+                android:layout_height="0dp" android:id="@+id/buttonEquals" app:layout_columnWeight="0.25"
+                app:layout_rowWeight="0.25" android:background="@color/colorAccent" android:textSize="50sp"
                 android:textColor="#FFFFFF"/>
     </androidx.gridlayout.widget.GridLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

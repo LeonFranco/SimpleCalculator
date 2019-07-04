@@ -28,35 +28,4 @@ class MainActivity : AppCompatActivity() {
         mainTextView.text = "HELLO"
     } // onCreate
 
-    private fun pressNumButton(num: Int) {
-        output.append(num)
-        modePressed = false
-    } // pressNumButton
-
-    private fun pressedModeButton(modeSymbol: Char) {
-        mode = when (modeSymbol) {
-            '+' -> CalcMode.ADD
-            '-' -> CalcMode.SUBTRACT
-            '*' -> CalcMode.MULTIPLY
-            else -> throw IllegalArgumentException()
-        }
-
-        if (modePressed) {
-            output[output.lastIndex] = modeSymbol
-        }
-        else {
-            output.append(modeSymbol)
-            modePressed = true
-        }
-    } // pressedModeButton
-
-    private fun pressedClear() {
-        output.clear()
-        modePressed = false
-    } // pressedClear
-
-    private fun pressedEnter() {
-
-    } // pressedClear
-
 } // MainActivity

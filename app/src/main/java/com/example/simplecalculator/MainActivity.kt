@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
     private var modePressed = false
     private val output = StringBuilder()
 
+
     // METHODS //
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

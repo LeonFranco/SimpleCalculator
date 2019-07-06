@@ -57,11 +57,8 @@ class MainActivity : AppCompatActivity() {
     private fun initializeModeButtons(modeButtons: Array<Button>) {
         for (button in modeButtons) {
             button.setOnClickListener {
-                if (!modePressed && input.isNotEmpty()) {
+                if (!modePressed) {
                     output.append(input.toString() + button.text)
-                }
-                else if (!modePressed && input.isEmpty()) {
-                    output.append("0" + button.text)
                 }
                 else {
                     output[output.lastIndex] = button.text[0]

@@ -6,17 +6,7 @@ import android.widget.Button
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-    // HELPER CLASS //
-    private enum class CalcMode {
-        ADD,
-        SUBTRACT,
-        MULTIPLY,
-        NONE
-    } // calcMode
-
-
     // ATTRIBUTES //
-    private var mode = CalcMode.NONE
     private var modePressed = false
     private val input = StringBuilder()
     private val output = StringBuilder()

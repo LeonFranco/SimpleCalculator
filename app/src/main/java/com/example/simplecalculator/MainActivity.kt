@@ -31,6 +31,9 @@ class MainActivity : AppCompatActivity() {
         val numButtons = arrayOf(button0, button1, button2, button3, button4, button5, button6, button7, button8, button9)
         initializeNumberButtons(numButtons)
 
+        val modeButtons = arrayOf(buttonPlus, buttonMinus, buttonMultiply)
+        initializeModeButtons(modeButtons)
+
         buttonClear.setOnClickListener { clear() }
 
     } // onCreate
@@ -53,7 +56,19 @@ class MainActivity : AppCompatActivity() {
     } // initializeNumberButtons
 
     private fun initializeModeButtons(modeButtons: Array<Button>) {
+        for (button in modeButtons) {
+            button.setOnClickListener {
+                if (!modePressed) {
+                    output.append(button.text)
+                    modePressed = true
+                }
+                else {
+                    output[output.lastIndex] = button.text[0]
+                }
 
+                mainTextView.text = output.toString()
+            } // setOnClickListener
+        } // for
     } // initializeModeButtons
 
     private fun clear() {

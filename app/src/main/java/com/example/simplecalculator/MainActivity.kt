@@ -45,7 +45,6 @@ class MainActivity : AppCompatActivity() {
                 input.append(button.text)
 
                 if (input.toString() == "0") {
-                    input.clear()
                     return@setOnClickListener
                 }
 

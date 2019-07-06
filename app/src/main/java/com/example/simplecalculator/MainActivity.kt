@@ -18,7 +18,8 @@ class MainActivity : AppCompatActivity() {
     // ATTRIBUTES //
     private var mode = CalcMode.NONE
     private var modePressed = false
-    private val output = StringBuilder(0)
+    private val input = StringBuilder()
+    private val output = StringBuilder()
 
 
     // METHODS //
@@ -41,15 +42,14 @@ class MainActivity : AppCompatActivity() {
     private fun initializeNumberButtons(numButtons: Array<Button>) {
         for (button in numButtons) {
             button.setOnClickListener {
-                val tempString = StringBuilder(mainTextView.text)
+                input.append(button.text)
 
-                when (tempString.toString()) {
-                    "0" -> tempString[0] = button.text[0]
-                    else -> tempString.append(button.text)
+                if (input.toString() == "0") {
+                    input.clear()
+                    return@setOnClickListener
                 }
 
-                mainTextView.text = tempString.toString()
-                output.append(button.text)
+                mainTextView.text = output.toString() + input.toString()
                 modePressed = false
             } // setOnClickListener
         } // for
@@ -58,22 +58,26 @@ class MainActivity : AppCompatActivity() {
     private fun initializeModeButtons(modeButtons: Array<Button>) {
         for (button in modeButtons) {
             button.setOnClickListener {
-                if (!modePressed) {
-                    output.append(button.text)
-                    modePressed = true
+                if (!modePressed && input.isNotEmpty()) {
+                    output.append(input.toString() + button.text)
+                }
+                else if (!modePressed && input.isEmpty()) {
+                    output.append("0" + button.text)
                 }
                 else {
                     output[output.lastIndex] = button.text[0]
                 }
 
+                input.clear()
+                modePressed = true
                 mainTextView.text = output.toString()
             } // setOnClickListener
         } // for
     } // initializeModeButtons
 
     private fun clear() {
+        input.clear()
         output.clear()
-        output.append(0)
         mainTextView.text = "0"
         modePressed = false
     } // clear

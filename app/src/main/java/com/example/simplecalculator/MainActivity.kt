@@ -42,11 +42,11 @@ class MainActivity : AppCompatActivity() {
     private fun initializeNumberButtons(numButtons: Array<Button>) {
         for (button in numButtons) {
             button.setOnClickListener {
-                input.append(button.text)
-
                 if (input.toString() == "0") {
                     return@setOnClickListener
                 }
+
+                input.append(button.text)
 
                 mainTextView.text = output.toString() + input.toString()
                 modePressed = false

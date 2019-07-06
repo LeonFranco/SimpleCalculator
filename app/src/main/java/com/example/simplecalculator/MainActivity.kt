@@ -30,6 +30,7 @@ class MainActivity : AppCompatActivity() {
         val numButtons = arrayOf(button0, button1, button2, button3, button4, button5, button6, button7, button8, button9)
         initializeNumberButtons(numButtons)
 
+        buttonClear.setOnClickListener { clear() }
 
     } // onCreate
 
@@ -49,5 +50,11 @@ class MainActivity : AppCompatActivity() {
             } // setOnClickListener
         } // for
     } // initializeNumberButtons
+
+    private fun clear() {
+        output.clear()
+        mainTextView.text = "0"
+        modePressed = false
+    } // clear
 
 } // MainActivity

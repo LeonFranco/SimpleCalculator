@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
     // ATTRIBUTES //
     private var mode = CalcMode.NONE
     private var modePressed = false
-    private val output = StringBuilder()
+    private val output = StringBuilder(0)
 
 
     // METHODS //
@@ -58,6 +58,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun clear() {
         output.clear()
+        output.append(0)
         mainTextView.text = "0"
         modePressed = false
     } // clear

@@ -27,6 +27,7 @@ class MainActivity : AppCompatActivity() {
 
         buttonClear.setOnClickListener { clear() }
 
+        buttonEquals.setOnClickListener { calculate() }
     } // onCreate
 
     private fun initializeNumberButtons(numButtons: Array<Button>) {
@@ -67,5 +68,9 @@ class MainActivity : AppCompatActivity() {
         mainTextView.text = "0"
         modePressed = false
     } // clear
+
+    private fun calculate() {
+
+    } // calculate()
 
 } // MainActivity

@@ -52,6 +52,10 @@ class MainActivity : AppCompatActivity() {
         } // for
     } // initializeNumberButtons
 
+    private fun initializeModeButtons(modeButtons: Array<Button>) {
+
+    } // initializeModeButtons
+
     private fun clear() {
         output.clear()
         mainTextView.text = "0"

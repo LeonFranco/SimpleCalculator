@@ -70,6 +70,14 @@ class MainActivity : AppCompatActivity() {
     } // clear
 
     private fun calculate() {
+        if (modePressed) {
+            return
+        }
+
+        if (output.isEmpty()) {
+            return
+        }
+
 
     } // calculate()
 

@@ -48,7 +48,10 @@ class MainActivity : AppCompatActivity() {
     private fun initializeModeButtons(modeButtons: Array<Button>) {
         for (button in modeButtons) {
             button.setOnClickListener {
-                if (!modePressed) {
+                if (!modePressed && output.isEmpty()) {
+                    output.append("0" + button.text)
+                }
+                else if (!modePressed) {
                     output.append(input.toString() + button.text)
                 }
                 else {

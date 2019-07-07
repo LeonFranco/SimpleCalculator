@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import kotlinx.android.synthetic.main.activity_main.*
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
     // ATTRIBUTES //
@@ -81,7 +82,46 @@ class MainActivity : AppCompatActivity() {
             return
         }
 
+        if (input.isEmpty()) {
+            return
+        }
 
+        output.append(input.toString())
+        input.clear()
+
+        var result = 0
+        var currentNumber = StringBuilder()
+        val numStack = Stack<Int>()
+
+        for (c in output.toString()) {
+            when (c) {
+                '+' -> {
+                    numStack.push(currentNumber.toString().toInt())
+                    currentNumber.clear()
+                }
+                '-' -> {
+                    numStack.push(currentNumber.toString().toInt())
+                    currentNumber.clear()
+                    currentNumber.append('-')
+                }
+                '*' -> {
+                    val prevNum = numStack.pop()
+                    val multResult = prevNum * currentNumber.toString().toInt()
+
+                    numStack.push(multResult)
+                    currentNumber.clear()
+                }
+                else -> currentNumber.append(c)
+            }
+        } // for
+
+        while (numStack.isNotEmpty()) {
+            result += numStack.pop()
+        } // while
+
+        output.clear()
+        output.append(result)
+        mainTextView.text = output.toString()
     } // calculate()
 
 } // MainActivity

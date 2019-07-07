@@ -53,8 +53,8 @@ class MainActivity : AppCompatActivity() {
     private fun initializeModeButtons(modeButtons: Array<Button>) {
         for (button in modeButtons) {
             button.setOnClickListener {
-                if (output.toString() == "0") {
-                    output.clear()
+                if (output.isEmpty() && input.isEmpty()) {
+                    output.append(0)
                 }
 
                 if (!modePressed) {
@@ -94,39 +94,74 @@ class MainActivity : AppCompatActivity() {
         output.append(input.toString())
         input.clear()
 
+        if (output[0] == '-') {
+            output.insert(0, '0')
+        }
+
         var result = 0
         var currentNumber = StringBuilder()
         val numStack = Stack<Int>()
+        var multFlag = false
 
         for (c in output.toString()) {
             when (c) {
                 '+' -> {
                     numStack.push(currentNumber.toString().toInt())
                     currentNumber.clear()
+
+                    if (multFlag) {
+                        val num1 = numStack.pop()
+                        val num2 = numStack.pop()
+
+                        numStack.push(num1 *  num2)
+                        multFlag = false
+                    }
                 }
                 '-' -> {
                     numStack.push(currentNumber.toString().toInt())
                     currentNumber.clear()
                     currentNumber.append('-')
+
+                    if (multFlag) {
+                        val num1 = numStack.pop()
+                        val num2 = numStack.pop()
+
+                        numStack.push(num1 *  num2)
+                        multFlag = false
+                    }
                 }
                 '*' -> {
-                    val prevNum = numStack.pop()
-                    val multResult = prevNum * currentNumber.toString().toInt()
-
-                    numStack.push(multResult)
+                    numStack.push(currentNumber.toString().toInt())
                     currentNumber.clear()
+
+                    if (multFlag) {
+                        val num1 = numStack.pop()
+                        val num2 = numStack.pop()
+
+                        numStack.push(num1 *  num2)
+                    }
+
+                    multFlag = true
                 }
                 else -> currentNumber.append(c)
             }
         } // for
+
+        numStack.push(currentNumber.toString().toInt())
+
+        if (multFlag) {
+            val num1 = numStack.pop()
+            val num2 = numStack.pop()
+
+            numStack.push(num1 *  num2)
+        }
 
         while (numStack.isNotEmpty()) {
             result += numStack.pop()
         } // while
 
         output.clear()
-        output.append(result)
-        mainTextView.text = output.toString()
+        mainTextView.text = result.toString()
     } // calculate()
 
 } // MainActivity

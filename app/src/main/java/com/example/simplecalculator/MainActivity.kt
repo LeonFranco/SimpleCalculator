@@ -34,6 +34,10 @@ class MainActivity : AppCompatActivity() {
     private fun initializeNumberButtons(numButtons: Array<Button>) {
         for (button in numButtons) {
             button.setOnClickListener {
+                if (output.toString() == "0") {
+                    output.clear()
+                }
+
                 if (input.toString() == "0") {
                     return@setOnClickListener
                 }
@@ -49,10 +53,11 @@ class MainActivity : AppCompatActivity() {
     private fun initializeModeButtons(modeButtons: Array<Button>) {
         for (button in modeButtons) {
             button.setOnClickListener {
-                if (!modePressed && output.isEmpty()) {
-                    output.append("0" + button.text)
+                if (output.toString() == "0") {
+                    output.clear()
                 }
-                else if (!modePressed) {
+
+                if (!modePressed) {
                     output.append(input.toString() + button.text)
                 }
                 else {
